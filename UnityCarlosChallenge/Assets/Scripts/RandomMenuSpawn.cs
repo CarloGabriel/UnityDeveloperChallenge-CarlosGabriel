@@ -6,13 +6,17 @@ public class RandomMenuSpawn : MonoBehaviour
 
 {
     
+    public GameObject[] myObjects;
 
-     public GameObject[] myObjects;
+    void Start()
+    {
+        InvokeRepeating("RandomSpawn", 2.0f, 3f);
+    }
 
-    void Update()
+    void RandomSpawn()
     {
             int randomIndex = Random.Range(0, myObjects.Length);
-            Vector3 randomSpawnPosition = new Vector3(Random.Range(-950, 950), 671, -99);
+            Vector3 randomSpawnPosition = new Vector3(Random.Range(65, 2000), 1080, -99);
 
             Instantiate(myObjects[randomIndex], randomSpawnPosition, Quaternion.identity);
 
