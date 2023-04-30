@@ -16240,6 +16240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseScenery variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4513299333632644273, guid: 3684371c22b98ae46aaba706e0ad7a02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5925961497733894845, guid: 3684371c22b98ae46aaba706e0ad7a02, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -17046,7 +17050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5925961497733894845, guid: 3684371c22b98ae46aaba706e0ad7a02, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5925961497733894845, guid: 3684371c22b98ae46aaba706e0ad7a02, type: 3}
       propertyPath: m_LocalPosition.x
