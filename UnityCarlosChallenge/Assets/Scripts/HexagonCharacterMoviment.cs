@@ -5,13 +5,10 @@ using UnityEngine;
 public class HexagonCharacterMoviment : MonoBehaviour
 {
   
-
-   
-
     void OnMouseDown()
     {
         GameObject PlayerToMove = GameObject.Find ("DogPolyart"); 
-        PlayerToMove.transform.position = new Vector3(transform.position.x,0.2f,transform.position.z);
+        PlayerToMove.transform.position = new Vector3(transform.position.x,-1f,transform.position.z);
         PlayerToMove.transform.rotation = Quaternion.identity;
     }
 }

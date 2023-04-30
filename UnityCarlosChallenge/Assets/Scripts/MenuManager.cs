@@ -9,9 +9,16 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject initialMenu;
     [SerializeField] private GameObject settignsMenu;
 
-    public void QuickPlay()
+    
+
+    public void SquareLevelLoad()
     {
-        SceneManager.LoadScene(levelEditor);
+        SceneManager.LoadScene("SquareLevel");
+    }
+
+    public void HexagonLevelLoad()
+    {
+        SceneManager.LoadScene("HexagonLevel");
     }
 
     public void OpenSettings()

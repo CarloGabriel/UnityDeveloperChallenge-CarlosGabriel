@@ -11,9 +11,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseScenery variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3491767607977536577, guid: 75df4b614b66fff44b2d63dfdf321f0e, type: 3}
+      propertyPath: m_TagString
+      value: Terreno
+      objectReference: {fileID: 0}
     - target: {fileID: 3782703038884554259, guid: 75df4b614b66fff44b2d63dfdf321f0e, type: 3}
       propertyPath: m_Mass
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782703038884554259, guid: 75df4b614b66fff44b2d63dfdf321f0e, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6143831574578861686, guid: 75df4b614b66fff44b2d63dfdf321f0e, type: 3}
       propertyPath: m_Enabled
@@ -65,3 +73,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75df4b614b66fff44b2d63dfdf321f0e, type: 3}
+--- !u!1 &4513299333632644273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3491767607977536577, guid: 75df4b614b66fff44b2d63dfdf321f0e, type: 3}
+  m_PrefabInstance: {fileID: 1069382773604169968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &-5863163175022456767
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513299333632644273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5024422851983823875, guid: 65ee16ee7413b524cbebe2fb52bfbd1c, type: 3}
