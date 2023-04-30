@@ -11,7 +11,7 @@ public class CharacterMoviment : MonoBehaviour
     void OnMouseDown()
     {
         GameObject PlayerToMove = GameObject.Find ("DogPolyart"); 
-        PlayerToMove.transform.position = new Vector3(-3.495f,1f,-4.511f);
-         
+        PlayerToMove.transform.position = new Vector3(transform.position.x,0.3f,transform.position.z);
+        PlayerToMove.transform.rotation = Quaternion.identity;
     }
 }
