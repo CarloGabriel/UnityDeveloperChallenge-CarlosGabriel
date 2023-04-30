@@ -2049,7 +2049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6878020708070578755, guid: 09cc425fe7708a041afe7bf54ea719d0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 585
+      value: 581
       objectReference: {fileID: 0}
     - target: {fileID: 6878020708070578755, guid: 09cc425fe7708a041afe7bf54ea719d0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2180,7 +2180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0400df0f28441b642917b40833c5668c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelEditor: 
+  levelEditor: Level Editor
   initialMenu: {fileID: 950576266}
   settignsMenu: {fileID: 880142643}
 --- !u!4 &1129267662
