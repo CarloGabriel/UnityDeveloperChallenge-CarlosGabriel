@@ -1,7 +1,8 @@
 # UnityDeveloperChallenge-CarlosGabriel
 Unity Developer Challenge - Carlos Gabriel Ferreira Silva
 
-#bugs não solucionados e demais tarefas não implementadas devido ao tempo e erros de código
+#bugs não solucionados e demais tarefas não implementadas devido ao gerenciamento de tempo
+para tentativas de implementações de ideias nao bem sucedidas com geração procedural e IA.
 
 - Base - Menu
     - [x]  Main menu scene
