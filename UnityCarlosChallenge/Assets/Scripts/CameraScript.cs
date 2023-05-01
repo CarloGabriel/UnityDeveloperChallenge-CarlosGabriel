@@ -9,7 +9,6 @@ public class CameraScript : MonoBehaviour {
 	void FixedUpdate ()
 	{
         target = GameObject.FindGameObjectWithTag("inTurn").transform;
-		
 
 		transform.LookAt(target);
 	}

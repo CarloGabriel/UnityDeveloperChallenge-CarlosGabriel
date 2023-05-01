@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class SLevelManager : MonoBehaviour
 {
+    public GameObject[] Allterrain;
     public GameObject Knight;
     public GameObject Wizard;
+    public GameObject[] itens;
     GameObject PlayerToRename;
     private string Player;
     private int SpawnPoint = 1;
@@ -48,6 +50,32 @@ public class SLevelManager : MonoBehaviour
         PlayerToRename.name = Player;
 
     }
+
+    public void SpawnItens()
+    {
+        Allterrain = GameObject.FindGameObjectsWithTag("Terreno");
+        GameObject player1 = GameObject.FindGameObjectWithTag("inTurn");
+        GameObject player2 = GameObject.FindGameObjectWithTag("notInTurn");
+
+        for (int i = 0; i < Allterrain.Length; i++)
+        {
+            int indexRandom =Random.Range(0,2);
+            if(Allterrain[i].transform.position.x == player1.transform.position.x && Allterrain[i].transform.position.z == player1.transform.position.z)
+            {
+                continue;
+            }
+            else if(Allterrain[i].transform.position.x == player2.transform.position.x && Allterrain[i].transform.position.z == player2.transform.position.z)
+            {
+                continue;
+            }
+            else
+            {
+                Instantiate(itens[indexRandom], new Vector3(Allterrain[i].transform.position.x, 0f, Allterrain[i].transform.position.z), Quaternion.identity);
+            }
+               
+        }
+    }
+
 
     public void ButtonDisable([SerializeField]string buttonReference)
     {

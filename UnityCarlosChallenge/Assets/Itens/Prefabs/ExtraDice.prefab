@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33838938172249284}
   - component: {fileID: 23911410159053060}
   m_Layer: 0
-  m_Name: Elixir_Of_Mana
+  m_Name: ExtraDice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
