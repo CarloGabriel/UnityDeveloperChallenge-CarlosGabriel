@@ -10,8 +10,12 @@ public class CharacterNearbyobj : MonoBehaviour
     float distance;
     float nearbyDistance = 5;
     [SerializeField] public GameObject toGoTerrain;
-    
 
+    private string PlayerIn = "Player1";
+    private string PlayerNot = "Player2";
+    private string PlayerAux = "";
+    private GameObject PlayerToRename;
+    private int count;
 
     void Update()
     {   
@@ -21,8 +25,22 @@ public class CharacterNearbyobj : MonoBehaviour
         }
         
         NearbyTerrain();
-        CreatToGoTerrain();
         
+        if (gameObject.tag == "inTurn")
+        {
+           CreatToGoTerrain(); 
+        }
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            count+=1;
+            if(count == 3)
+            {
+                count = 0;
+                changeTag();
+                changeOrder();
+            }
+        }
 
     }
 
@@ -36,7 +54,15 @@ public class CharacterNearbyobj : MonoBehaviour
 
             if( distance < nearbyDistance)
             {
-                NearbyObj.Add(Allterrain[i]);
+                GameObject enemy = GameObject.FindGameObjectWithTag("notInTurn");
+                if(Allterrain[i].transform.position.x == enemy.transform.position.x && Allterrain[i].transform.position.z == enemy.transform.position.z)
+                {
+                    continue;
+                }
+                else
+                {
+                    NearbyObj.Add(Allterrain[i]);
+                }
                
             }
 
@@ -62,5 +88,21 @@ public class CharacterNearbyobj : MonoBehaviour
 
     } 
 
+    
+    public void changeTag()
+    {
+        
+        PlayerToRename = GameObject.Find (PlayerIn); 
+        PlayerToRename.transform.gameObject.tag = "inTurn";
 
+        PlayerToRename = GameObject.Find (PlayerNot); 
+        PlayerToRename.transform.gameObject.tag = "notInTurn";
+    }
+
+    public void changeOrder()
+    {
+        PlayerAux = PlayerNot; 
+        PlayerNot = PlayerIn;
+        PlayerIn = PlayerAux;
+    }
 }

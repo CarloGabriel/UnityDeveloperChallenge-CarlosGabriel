@@ -9,6 +9,8 @@ TagManager:
   - CPU(AI)
   - Terreno
   - TerrainGo
+  - inTurn
+  - notInTurn
   layers:
   - Default
   - TransparentFX

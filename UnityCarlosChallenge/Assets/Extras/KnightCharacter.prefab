@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: -9003208870881322793}
   m_Layer: 0
   m_Name: KnightCharacter
-  m_TagString: Player1
+  m_TagString: notInTurn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

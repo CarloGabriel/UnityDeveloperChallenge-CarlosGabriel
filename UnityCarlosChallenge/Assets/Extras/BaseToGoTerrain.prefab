@@ -110,3 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aad488dc6006f24f8aab6dd15cd5b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerIn: Player1
+  PlayerNot: Player2
+  PlayerAux: 
+  PlayerToRename: {fileID: 0}
+  moveCount: {fileID: 2421867243179555546, guid: 50310d4b0f9767844a61ef26c5dcf69d, type: 3}

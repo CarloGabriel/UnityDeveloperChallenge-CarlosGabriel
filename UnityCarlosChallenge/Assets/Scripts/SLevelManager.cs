@@ -7,6 +7,7 @@ public class SLevelManager : MonoBehaviour
 {
     public GameObject Knight;
     public GameObject Wizard;
+    GameObject PlayerToRename;
     private string Player;
     private int SpawnPoint = 1;
     private int randAux =1;
@@ -33,7 +34,7 @@ public class SLevelManager : MonoBehaviour
             int SpawnPoint = getRandom();
 
         Instantiate(Knight, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, 0.3f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
-        GameObject PlayerToRename = GameObject.Find ("KnightCharacter(Clone)"); 
+        PlayerToRename = GameObject.Find ("KnightCharacter(Clone)"); 
         PlayerToRename.name = Player;
 
     }
@@ -43,7 +44,7 @@ public class SLevelManager : MonoBehaviour
             int SpawnPoint = getRandom();
         
         Instantiate(Wizard, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, 0.3f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
-        GameObject PlayerToRename = GameObject.Find ("WizardCharacter(Clone)"); 
+        PlayerToRename = GameObject.Find ("WizardCharacter(Clone)"); 
         PlayerToRename.name = Player;
 
     }
@@ -62,7 +63,7 @@ public class SLevelManager : MonoBehaviour
 
     public void CloseLevelEditor(GameObject LevelMenu)
     {
-        
+        initalTag();
         LevelMenu.SetActive(false);
         
     }
@@ -78,7 +79,14 @@ public class SLevelManager : MonoBehaviour
            return(Random.Range(194,223)); 
         }
         
-        
+    }
+
+    public void initalTag()
+    {
+        PlayerToRename = GameObject.Find ("Player1");
+        PlayerToRename.transform.gameObject.tag = "inTurn";
+        PlayerToRename = GameObject.Find ("Player2");
+        PlayerToRename.transform.gameObject.tag = "notInTurn";
     }
 
 }
