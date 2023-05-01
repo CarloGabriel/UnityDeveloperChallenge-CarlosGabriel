@@ -73,7 +73,7 @@ public class CharacterNearbyobj : MonoBehaviour
     {
         for (int i = 0; i < NearbyObj.Count; i++)
         {
-            Instantiate(toGoTerrain, new Vector3(NearbyObj[i].transform.position.x, 0f, NearbyObj[i].transform.position.z), Quaternion.identity);
+            Instantiate(toGoTerrain, new Vector3(NearbyObj[i].transform.position.x, -0.6f, NearbyObj[i].transform.position.z), Quaternion.identity);
         }
     }
     

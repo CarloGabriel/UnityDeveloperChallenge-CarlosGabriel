@@ -11,6 +11,7 @@ TagManager:
   - TerrainGo
   - inTurn
   - notInTurn
+  - item
   layers:
   - Default
   - TransparentFX

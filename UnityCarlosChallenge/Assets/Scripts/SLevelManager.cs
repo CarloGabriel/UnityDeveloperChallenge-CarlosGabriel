@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class SLevelManager : MonoBehaviour
 {
-    public GameObject[] Allterrain;
+    
+    public GameObject[] Allitens;
     public GameObject Knight;
     public GameObject Wizard;
     public GameObject[] itens;
@@ -53,24 +54,27 @@ public class SLevelManager : MonoBehaviour
 
     public void SpawnItens()
     {
-        Allterrain = GameObject.FindGameObjectsWithTag("Terreno");
+        Allitens = GameObject.FindGameObjectsWithTag("Terreno");
         GameObject player1 = GameObject.FindGameObjectWithTag("inTurn");
         GameObject player2 = GameObject.FindGameObjectWithTag("notInTurn");
 
-        for (int i = 0; i < Allterrain.Length; i++)
+        for (int i = 0; i < Allitens.Length; i++)
         {
-            int indexRandom =Random.Range(0,2);
-            if(Allterrain[i].transform.position.x == player1.transform.position.x && Allterrain[i].transform.position.z == player1.transform.position.z)
+            int indexRandom =Random.Range(0,3);
+            if(Allitens[i].transform.position.x == player1.transform.position.x && Allitens[i].transform.position.z == player1.transform.position.z)
             {
                 continue;
             }
-            else if(Allterrain[i].transform.position.x == player2.transform.position.x && Allterrain[i].transform.position.z == player2.transform.position.z)
+            else if(Allitens[i].transform.position.x == player2.transform.position.x && Allitens[i].transform.position.z == player2.transform.position.z)
             {
                 continue;
             }
             else
             {
-                Instantiate(itens[indexRandom], new Vector3(Allterrain[i].transform.position.x, 0f, Allterrain[i].transform.position.z), Quaternion.identity);
+                Instantiate(itens[indexRandom], new Vector3(Allitens[i].transform.position.x, 0.5f, Allitens[i].transform.position.z), Quaternion.identity);
+                PlayerToRename = GameObject.Find (itens[indexRandom].name + "(Clone)"); 
+                PlayerToRename.tag = "item";
+                
             }
                
         }
