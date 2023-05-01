@@ -996,8 +996,8 @@ GameObject:
   - component: {fileID: 8617316429672843614}
   - component: {fileID: 7726431983381951392}
   - component: {fileID: 7726431983381951393}
-  - component: {fileID: -2496886626393860003}
   - component: {fileID: -9003208870881322793}
+  - component: {fileID: -4026114813488265090}
   m_Layer: 0
   m_Name: KnightCharacter
   m_TagString: notInTurn
@@ -1073,18 +1073,6 @@ CapsuleCollider:
   m_Height: 1.229345
   m_Direction: 1
   m_Center: {x: 0, y: 0.6709632, z: 0}
---- !u!114 &-2496886626393860003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8617316429665467106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47892301634bae749912a962d393a82d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-9003208870881322793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1101,6 +1089,21 @@ MonoBehaviour:
   TerrainToClear: []
   NearbyObj: []
   toGoTerrain: {fileID: 3196648517536708714, guid: 71c38263759eb63469c7724486296dc9, type: 3}
+--- !u!114 &-4026114813488265090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617316429665467106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969fbdb541b75d6409ed4c4619c45e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  ATK: 0
+  DCS: 0
 --- !u!1 &8617316429665467108
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,11 +11,20 @@ public class GameplayUI : MonoBehaviour
     public TextMeshProUGUI currentPlayer;
     public TextMeshProUGUI currentTurnString;
 
+ 
+
     void Update()
     {
         currentTurn = GameObject.FindGameObjectWithTag("inTurn");
+        
+        currentPlayer.text = currentTurn.name;
 
+    }
+
+    void FixedUpdate()
+    {
         currentTurnString.text = (countS+1).ToString();
+        
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -25,9 +34,6 @@ public class GameplayUI : MonoBehaviour
                 countS = 0;
             }
         }
-
-        currentPlayer.text = currentTurn.name;
-        
     }
 
 

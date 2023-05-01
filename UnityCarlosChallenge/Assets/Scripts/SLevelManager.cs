@@ -15,11 +15,13 @@ public class SLevelManager : MonoBehaviour
     private int SpawnPoint = 1;
     private int randAux =1;
     GameObject[] RandomSpawnPoint;
-    
+
+
     void Start()
     {
         RandomSpawnPoint = GameObject.FindGameObjectsWithTag("Terreno");
     }
+
 
     public void Player1()
     {
@@ -39,7 +41,13 @@ public class SLevelManager : MonoBehaviour
         Instantiate(Knight, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, 0.3f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
         PlayerToRename = GameObject.Find ("KnightCharacter(Clone)"); 
         PlayerToRename.name = Player;
-
+        PlayerToRename.GetComponent<Status>().HP = 10;
+        PlayerToRename.GetComponent<Status>().ATK = 2;
+        PlayerToRename.GetComponent<Status>().DCS = 3;
+        PlayerToRename.GetComponent<Status>().BaHP = 10;
+        PlayerToRename.GetComponent<Status>().BaATK = 2;
+        PlayerToRename.GetComponent<Status>().BaDCS = 3;
+        
     }
 
     public void SpawnPlayerWizard()
@@ -49,18 +57,27 @@ public class SLevelManager : MonoBehaviour
         Instantiate(Wizard, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, 0.3f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
         PlayerToRename = GameObject.Find ("WizardCharacter(Clone)"); 
         PlayerToRename.name = Player;
-
+        PlayerToRename.GetComponent<Status>().HP = 6;
+        PlayerToRename.GetComponent<Status>().ATK = 4;
+        PlayerToRename.GetComponent<Status>().DCS = 3;
+        PlayerToRename.GetComponent<Status>().BaHP = 6;
+        PlayerToRename.GetComponent<Status>().BaATK = 4;
+        PlayerToRename.GetComponent<Status>().BaDCS = 3;
     }
+
+    
 
     public void SpawnItens()
     {
+        
+
         Allitens = GameObject.FindGameObjectsWithTag("Terreno");
         GameObject player1 = GameObject.FindGameObjectWithTag("inTurn");
         GameObject player2 = GameObject.FindGameObjectWithTag("notInTurn");
 
         for (int i = 0; i < Allitens.Length; i++)
         {
-            int indexRandom =Random.Range(0,3);
+            int indexRandom =Random.Range(0,6);
             if(Allitens[i].transform.position.x == player1.transform.position.x && Allitens[i].transform.position.z == player1.transform.position.z)
             {
                 continue;

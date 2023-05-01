@@ -5,18 +5,23 @@ using UnityEngine.UI;
 
 public class HLevelManager : MonoBehaviour
 {
+    
+    public GameObject[] Allitens;
     public GameObject Knight;
     public GameObject Wizard;
+    public GameObject[] itens;
+    GameObject PlayerToRename;
     private string Player;
     private int SpawnPoint = 1;
     private int randAux =1;
     GameObject[] RandomSpawnPoint;
-    GameObject PlayerToRename;
-    
+
+
     void Start()
     {
         RandomSpawnPoint = GameObject.FindGameObjectsWithTag("Terreno");
     }
+
 
     public void Player1()
     {
@@ -33,21 +38,65 @@ public class HLevelManager : MonoBehaviour
         
             int SpawnPoint = getRandom();
 
-        Instantiate(Knight, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, -0.5f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
+        Instantiate(Knight, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, 0.3f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
         PlayerToRename = GameObject.Find ("KnightCharacter(Clone)"); 
         PlayerToRename.name = Player;
-
+        PlayerToRename.GetComponent<Status>().HP = 10;
+        PlayerToRename.GetComponent<Status>().ATK = 2;
+        PlayerToRename.GetComponent<Status>().DCS = 3;
+        PlayerToRename.GetComponent<Status>().BaHP = 10;
+        PlayerToRename.GetComponent<Status>().BaATK = 2;
+        PlayerToRename.GetComponent<Status>().BaDCS = 3;
+        
     }
 
     public void SpawnPlayerWizard()
     {
             int SpawnPoint = getRandom();
         
-        Instantiate(Wizard, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, -0.5f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
+        Instantiate(Wizard, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, 0.3f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
         PlayerToRename = GameObject.Find ("WizardCharacter(Clone)"); 
         PlayerToRename.name = Player;
-
+        PlayerToRename.GetComponent<Status>().HP = 6;
+        PlayerToRename.GetComponent<Status>().ATK = 4;
+        PlayerToRename.GetComponent<Status>().DCS = 3;
+        PlayerToRename.GetComponent<Status>().BaHP = 6;
+        PlayerToRename.GetComponent<Status>().BaATK = 4;
+        PlayerToRename.GetComponent<Status>().BaDCS = 3;
     }
+
+    
+
+    public void SpawnItens()
+    {
+        
+
+        Allitens = GameObject.FindGameObjectsWithTag("Terreno");
+        GameObject player1 = GameObject.FindGameObjectWithTag("inTurn");
+        GameObject player2 = GameObject.FindGameObjectWithTag("notInTurn");
+
+        for (int i = 0; i < Allitens.Length; i++)
+        {
+            int indexRandom =Random.Range(0,6);
+            if(Allitens[i].transform.position.x == player1.transform.position.x && Allitens[i].transform.position.z == player1.transform.position.z)
+            {
+                continue;
+            }
+            else if(Allitens[i].transform.position.x == player2.transform.position.x && Allitens[i].transform.position.z == player2.transform.position.z)
+            {
+                continue;
+            }
+            else
+            {
+                Instantiate(itens[indexRandom], new Vector3(Allitens[i].transform.position.x, 0.5f, Allitens[i].transform.position.z), Quaternion.identity);
+                PlayerToRename = GameObject.Find (itens[indexRandom].name + "(Clone)"); 
+                PlayerToRename.tag = "item";
+                
+            }
+               
+        }
+    }
+
 
     public void ButtonDisable([SerializeField]string buttonReference)
     {
@@ -65,9 +114,11 @@ public class HLevelManager : MonoBehaviour
     {
         initalTag();
         LevelMenu.SetActive(false);
+        
+        
     }
 
-    public void OpenUI(GameObject GameplayUI)
+        public void OpenUI(GameObject GameplayUI)
     {
         GameplayUI.SetActive(true);
     }
@@ -83,7 +134,6 @@ public class HLevelManager : MonoBehaviour
            return(Random.Range(194,223)); 
         }
         
-        
     }
 
     public void initalTag()
@@ -93,7 +143,5 @@ public class HLevelManager : MonoBehaviour
         PlayerToRename = GameObject.Find ("Player2");
         PlayerToRename.transform.gameObject.tag = "notInTurn";
     }
-
-
 
 }
