@@ -65,7 +65,11 @@ public class HLevelManager : MonoBehaviour
     {
         initalTag();
         LevelMenu.SetActive(false);
-        
+    }
+
+    public void OpenUI(GameObject GameplayUI)
+    {
+        GameplayUI.SetActive(true);
     }
 
     public int getRandom()
