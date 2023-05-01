@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class SquareCharacterMoviment : MonoBehaviour
 {
-  
-
-   
-
-    void OnMouseDown()
+    
+    public void OnMouseDown()
     {
-        GameObject PlayerToMove = GameObject.Find ("DogPolyart"); 
+        GameObject PlayerToMove = GameObject.Find ("Player1"); 
         PlayerToMove.transform.position = new Vector3(transform.position.x,0.2f,transform.position.z);
         PlayerToMove.transform.rotation = Quaternion.identity;
+        
+    }
+
+    public void ActiveEffects()
+    {
+        
     }
 }

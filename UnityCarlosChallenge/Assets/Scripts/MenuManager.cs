@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private string levelEditor;
+
     [SerializeField] private GameObject initialMenu;
     [SerializeField] private GameObject settignsMenu;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HLevelManager : MonoBehaviour
+public class SLevelManager : MonoBehaviour
 {
     public GameObject Knight;
     public GameObject Wizard;
@@ -32,7 +32,7 @@ public class HLevelManager : MonoBehaviour
         
             int SpawnPoint = getRandom();
 
-        Instantiate(Knight, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, -0.5f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
+        Instantiate(Knight, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, 0.3f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
         GameObject PlayerToRename = GameObject.Find ("KnightCharacter(Clone)"); 
         PlayerToRename.name = Player;
 
@@ -42,7 +42,7 @@ public class HLevelManager : MonoBehaviour
     {
             int SpawnPoint = getRandom();
         
-        Instantiate(Wizard, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, -0.5f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
+        Instantiate(Wizard, new Vector3(RandomSpawnPoint[SpawnPoint].transform.position.x, 0.3f, RandomSpawnPoint[SpawnPoint].transform.position.z), Quaternion.identity);
         GameObject PlayerToRename = GameObject.Find ("WizardCharacter(Clone)"); 
         PlayerToRename.name = Player;
 

@@ -8,6 +8,7 @@ TagManager:
   - Player2
   - CPU(AI)
   - Terreno
+  - TerrainGo
   layers:
   - Default
   - TransparentFX
